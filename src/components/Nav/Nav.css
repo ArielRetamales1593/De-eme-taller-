@@ -1,0 +1,41 @@
+/* investigar modulos css */
+
+.nav_group {
+  background-color: #eeeded;
+}
+
+.container_navbar {
+  width: 100%;
+  height: 15vh;
+  background-color: #eeeded;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button {
+  color: black !important;
+  border-color: #eeeded !important;
+  background-color: beige !important;
+  transition: background-color 1s ease !important;
+  font-size: 12px !;
+}
+
+.button:hover {
+  background-color: rgb(246, 224, 80) !important;
+
+  border: solid 1px;
+  color: white !important;
+
+  box-shadow: 10px 10px 10px rgba(5, 5, 5, 0.5);
+}
+
+.img_logo {
+  width: 70px;
+}
+
+.img_logo:hover {
+  filter: brightness(150%);
+  width: 75px;
+}
