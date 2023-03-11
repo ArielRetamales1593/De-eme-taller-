@@ -1,17 +1,31 @@
-import React from "react";
-import { Button } from "@mui/material";
+import React, { useEffect, useState } from "react";
+
+import { products } from "../../productsMock";
+import ItemList from "../ItemListPres/ItemList";
 
 const ItemListContainer = (props) => {
-  const saludar = () => {
-    alert("Hola muy buenos dias.");
-  };
+  const [items, setItems] = useState([]);
 
-  let { greeting } = props;
+  // la promesa viene del backend
+  useEffect(() => {
+    const producList = new Promise((resolve, reject) => {
+      resolve(products);
+    });
+    // resolver promesa
+    producList
+      .then((res) => {
+        setItems(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  console.log(items);
+
   return (
     <div>
-      <h2> {greeting} </h2>
-
-      <Button onClick={saludar}> Bienvenido </Button>
+      <ItemList items={items} />
     </div>
   );
 };

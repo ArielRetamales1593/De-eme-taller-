@@ -1,0 +1,47 @@
+.img {
+  width: 250px;
+  border: outset 2px white;
+}
+.nameProduct {
+  color: rgb(246, 224, 80);
+}
+
+.fondo {
+  background-color: black;
+}
+
+.tarjeta {
+  background-color: #eeeded;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.container {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+* {
+  margin: 3px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+}
+.boton {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo {
+  margin-left: 150px;
+  background-color: rgb(246, 224, 80);
+  border-radius: 1px 1px 5px 5px;
+  border: outset 1px;
+  width: 73vh;
+  color: white;
+  font-size: 20px;
+}
