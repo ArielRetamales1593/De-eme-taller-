@@ -16,14 +16,20 @@ const Nav = () => {
 
       <ButtonGroup
         className="nav_group"
-        variant="contained"
+        variant="outlined"
         aria-label="outlined primary button group"
       >
-        <Link to="/">
-          <Button className="button">Inicio</Button>
-          <Button className="button">Nosotros</Button>
-
-          <Button className="button">Productos</Button>
+        <Link to="/" className="li">
+          {" "}
+          <Button className="button">Inicio</Button>{" "}
+        </Link>
+        <Link to="/category/dormitorio">
+          {" "}
+          <Button className="button">Dormitorio</Button>{" "}
+        </Link>
+        <Link to="/category/living">
+          {" "}
+          <Button className="button">Living</Button>{" "}
         </Link>
       </ButtonGroup>
 

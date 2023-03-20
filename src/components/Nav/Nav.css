@@ -21,7 +21,11 @@
   border-color: #eeeded !important;
   background-color: beige !important;
   transition: background-color 1s ease !important;
-  font-size: 12px !important;
+  font-size: 10px !important;
+  width: 150px;
+  border-radius: 5px !important;
+  border: outset 1px white !important ;
+  height: 20px;
 }
 
 .button:hover {
@@ -29,8 +33,6 @@
 
   border: solid 1px;
   color: white !important;
-
-  box-shadow: 10px 10px 10px rgba(5, 5, 5, 0.5);
 }
 
 .img_logo {
@@ -40,4 +42,13 @@
 .img_logo:hover {
   filter: brightness(150%);
   width: 75px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.li {
+  color: blue !important 
+  ;
 }

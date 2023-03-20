@@ -6,7 +6,7 @@ import Styles from "../ItemListPres/item.module.css";
 
 const ItemDetailContainer = () => {
   const onAdd = (cantidad) => {
-    alert(`se agregar ${cantidad} productos al carrito de compra`);
+    alert(`se agregaron ${cantidad} productos al carrito de compra`);
     console.log(`se agregaron ${cantidad} elementos al carrito`);
   };
 
@@ -17,11 +17,13 @@ const ItemDetailContainer = () => {
   console.log(productoSelect);
 
   return (
-    <div>
+    <div className="contenedor">
       <h2> {productoSelect.title}</h2>
       <img className={Styles.img} src={productoSelect.img} alt="" />
       <p> {productoSelect.description}</p>
+      <p> Tipo de mueble: {productoSelect.category}</p>
       <h3> valor :${productoSelect.price}</h3>
+
       <ItemCount stock={productoSelect.stock} onAdd={onAdd} />
     </div>
   );
