@@ -16,7 +16,7 @@ const Api1 = () => {
   }, []);
 
   console.log(posts1);
-  return <div>Consumiendo Apias</div>;
+  return <div>Consumiendo Apis</div>;
 };
 
 export default Api1;

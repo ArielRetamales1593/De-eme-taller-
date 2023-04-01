@@ -1,20 +1,50 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import { products } from "../../productsMock";
 import ItemCount from "../ItemCount/ItemCount";
 import Styles from "../ItemListPres/item.module.css";
+import Swal from "sweetalert2";
+import { getDoc, doc, collection } from "firebase/firestore";
+import { db } from "../../firebaseconfig";
 
 const ItemDetailContainer = () => {
   const onAdd = (cantidad) => {
-    alert(`se agregaron ${cantidad} productos al carrito de compra`);
-    console.log(`se agregaron ${cantidad} elementos al carrito`);
+    let producto = {
+      ...productoSelect,
+      quantity: cantidad,
+    };
+    agregarAlcarrito(producto);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Producto agregado correctamente",
+
+      timer: 1500,
+    });
+    console.log(producto);
   };
 
   const { id } = useParams();
 
-  const productoSelect = products.find((element) => element.id === Number(id));
+  const { agregarAlcarrito, getQuantityById } = useContext(CartContext);
 
-  console.log(productoSelect);
+  const [productoSelect, setproductoSelect] = useState({});
+
+  useEffect(() => {
+    const itemCollection = collection(db, "products");
+    const ref = doc(itemCollection, id);
+    getDoc(ref).then((res) => {
+      setproductoSelect({
+        ...res.data(),
+        id: res.id,
+      });
+    });
+  }, [id]);
+
+  // const productoSelect = products.find((element) => element.id === Number(id));
+
+  let quantity = getQuantityById(Number(id));
 
   return (
     <div className="contenedor">
@@ -24,7 +54,11 @@ const ItemDetailContainer = () => {
       <p> Tipo de mueble: {productoSelect.category}</p>
       <h3> valor :${productoSelect.price}</h3>
 
-      <ItemCount stock={productoSelect.stock} onAdd={onAdd} />
+      <ItemCount
+        stock={productoSelect.stock}
+        onAdd={onAdd}
+        initial={quantity}
+      />
     </div>
   );
 };
