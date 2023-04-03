@@ -5,6 +5,7 @@ import FormCheckout from "../../FormCheckout/FormCheckout";
 import { Link } from "react-router-dom";
 import Empty from "../../Empty/Empty";
 import "./Cart.css";
+import Ok from "../../Ok/Ok";
 
 const Cart = () => {
   const { cart, clearCart, getTotalPrice, deleteProductById } =
@@ -34,10 +35,12 @@ const Cart = () => {
 
   if (orderId) {
     return (
-      <div>
+      <div className="mensajeFinal">
         <h2> Gracias por su compra</h2>
         <h4>El comprobante es : {orderId}</h4>
         <Link to="/"> Seguir Comprando</Link>
+
+        <Ok />
       </div>
     );
   }
