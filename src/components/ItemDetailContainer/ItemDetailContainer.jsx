@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { products } from "../../productsMock";
 import ItemCount from "../ItemCount/ItemCount";
-import Styles from "../ItemListPres/item.module.css";
+
 import Swal from "sweetalert2";
 import { getDoc, doc, collection } from "firebase/firestore";
 import { db } from "../../firebaseconfig";
+import "./itemdetail.modules.css";
 
 const ItemDetailContainer = () => {
   const onAdd = (cantidad) => {
@@ -45,12 +46,13 @@ const ItemDetailContainer = () => {
   // const productoSelect = products.find((element) => element.id === Number(id));
 
   let quantity = getQuantityById(Number(id));
+  9;
 
   return (
     <div className="contenedor">
       <h2> {productoSelect.title}</h2>
-      <img className={Styles.img} src={productoSelect.img} alt="" />
-      <p> {productoSelect.description}</p>
+      <img className="img" src={productoSelect.img} alt="" />
+      <p className="desc"> {productoSelect.description}</p>
       <p> Tipo de mueble: {productoSelect.category}</p>
       <h3> valor :${productoSelect.price}</h3>
 

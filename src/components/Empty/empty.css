@@ -1,0 +1,9 @@
+.cont {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sc {
+  border: solid 2px black;
+  padding: 5px;
+}
