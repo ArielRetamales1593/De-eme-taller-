@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
-import { products } from "../../productsMock";
+
 import ItemList from "../ItemListPres/ItemList";
 import { db } from "../../firebaseconfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -17,10 +17,6 @@ const ItemListContainer = (props) => {
   // recupero con el usem param info de las rutas
   // al boton inicio muestra todo pero aparece como undefined
   // si llega name copmo undifened se van a mostrar todas las rutas
-
-  const productosFiltrados = products.filter(
-    (elemento) => elemento.category === categoryName
-  );
 
   const [items, setItems] = useState([]);
 

@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import { products } from "../../productsMock";
-import ItemCount from "../ItemCount/ItemCount";
 
 import Swal from "sweetalert2";
 import { getDoc, doc, collection } from "firebase/firestore";
 import { db } from "../../firebaseconfig";
 import "./itemdetail.modules.css";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
   const onAdd = (cantidad) => {
@@ -50,16 +49,10 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="contenedor">
-      <h2> {productoSelect.title}</h2>
-      <img className="img" src={productoSelect.img} alt="" />
-      <p className="desc"> {productoSelect.description}</p>
-      <p> Tipo de mueble: {productoSelect.category}</p>
-      <h3> valor :${productoSelect.price}</h3>
-
-      <ItemCount
-        stock={productoSelect.stock}
+      <ItemDetail
+        productoSelect={productoSelect}
         onAdd={onAdd}
-        initial={quantity}
+        quantity={quantity}
       />
     </div>
   );
