@@ -32,6 +32,13 @@ npm install
 npm start
 ```
 
+### Diseño
+
+Diseño minimalista con un enfoque en la simplicidad y la funcionalidad. La paleta de colores destaca por un contraste sutil y
+agradable a la vista.
+
+El contenido se presenta en un formato claro y fácil de leer, con una tipografía simple y elegante. Los elementos visuales se utilizan con moderación para evitar distracciones y mantener el enfoque en el contenido principal.
+
 ## Logo
 
 ![Amarillo](./src/img/logo1.png)
