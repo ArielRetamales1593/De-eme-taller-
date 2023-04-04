@@ -34,7 +34,7 @@ npm start
 
 ## Logo
 
-![Granate](./src/img/logo1.png)
+![Amarillo](./src/img/logo1.png)
 
 ### Demo
 
