@@ -38,4 +38,4 @@ npm start
 
 ### Demo
 
-![Demo Dm Taller](./src/img/Gif%20Dmtaller.webm)
+![Demo Dm Taller](./src/img/Gif%20Dmtaller.gif)
